@@ -23,7 +23,9 @@ function App() {
     dispatch(checkAuth(token));
   }, [dispatch]);
 
-  if (loading) return <h1>Loading...</h1>
+  if (loading) return <div className="flex items-center justify-center h-screen">
+    <h1 className="text-3xl font-semibold text-gray-600">Loading...</h1>
+  </div>
   return (
     <div className="flex flex-col overflow-hidden bg-white">
       <Routes>
