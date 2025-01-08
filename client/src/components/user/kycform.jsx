@@ -114,7 +114,7 @@ const KycForm = ({ closeModal }) => {
       </div>
       {error && <p className="mb-4 text-sm text-red-500">{error}</p>}
       <Button type="submit"
-       className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-blue-60"
+       className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-blue-600"
         disabled={loading}
         label={loading ? "Submitting..." : "Submit" }
          />

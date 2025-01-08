@@ -72,14 +72,14 @@ const Home = () => {
         </div>
 
         <Button onClick={() => setShowModal(true)}
-          className="px-4 py-2 text-white bg-black rounded-md shadow"
+          className="px-4 py-2 text-white bg-black rounded-md shadow hover:bg-blue-800"
           label='Add KYC Request'
          />
         {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div className="relative bg-white p-6 rounded-lg shadow-md w-full max-w-md">
 
-              <Button onClick={() => setShowModal(false)} className="absolute top-3 right-3 px-4 py-2 text-white bg-black rounded-md shadow" label='x' />
+              <Button onClick={() => setShowModal(false)} className="absolute top-3 right-3 px-4 py-2 text-white bg-black hover:bg-blue-800 rounded-md shadow" label='x' />
               <h3 className="text-lg font-bold mb-4 text-center">Add KYC Request</h3>
               <div className="overflow-y-auto max-h-[80vh]">
                 <KYCForm closeModal={() => setShowModal(false)} />
