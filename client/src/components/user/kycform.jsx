@@ -53,7 +53,6 @@ const KycForm = ({ closeModal }) => {
 
   return (
     <form onSubmit={handleSubmit} className="p-6 bg-white rounded-lg shadow-md w-96">
-      {/* Form Fields */}
       <div className="mb-4">
         <label className="block mb-2 text-sm">Name</label>
         <input
@@ -65,7 +64,6 @@ const KycForm = ({ closeModal }) => {
           required
         />
       </div>
-      {/* Other Form Fields */}
       <div className="mb-4">
         <label className="block mb-2 text-sm">Email</label>
         <input

@@ -17,8 +17,29 @@ const addKYCRequest = async (req, res) => {
     const { name, email, documentType, address } = req.body;
     const user = req?.user;
 
-    if ( !name || !email || !documentType || !address || !req.file) {
-      return res.status(400).json({ success: false ,message: "All fields are required." });
+    if (!name || !email || !documentType || !address || !req.file) {
+      return res
+        .status(400)
+        .json({ success: false, message: "All fields are required." });
+    }
+
+    // Allowed MIME types
+    const allowedMimeTypes = [
+      "application/pdf",
+      "image/jpeg",
+      "image/png",
+      "image/gif",
+      "image/webp",
+      "image/avif",
+    ];
+
+    if (!allowedMimeTypes.includes(req.file.mimetype)) {
+      return res
+        .status(400)
+        .json({
+          success: false,
+          message: "Only PDF and image files are allowed.",
+        });
     }
 
     const fileBase64 = `data:${
