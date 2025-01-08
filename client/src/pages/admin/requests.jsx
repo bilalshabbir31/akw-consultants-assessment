@@ -7,13 +7,13 @@ import Button from "../../components/common/button";
 
 const AdminRequests = () => {
 
-  const { requestedUsers } = useSelector(state => state.adminKyc);
+  const { requestedUsers, loading } = useSelector(state => state.adminKyc);
   const dispatch = useDispatch();
 
   function handleUpdateStatus(requestId, status) {
-    dispatch(updateRequestStatus({requestId, status})).then(data => {
-      if(data?.payload?.success) {
-        dispatch(updateUserRequestStatus({requestId, status}))
+    dispatch(updateRequestStatus({ requestId, status })).then(data => {
+      if (data?.payload?.success) {
+        dispatch(updateUserRequestStatus({ requestId, status }))
         toast.success('Request status updated successfully!');
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -24,7 +24,7 @@ const AdminRequests = () => {
   useEffect(() => {
     dispatch(fetchAllRequestedUsers())
   }, [dispatch]);
-  
+
 
   if (!requestedUsers) {
     return <div className="flex items-center justify-center h-screen">
@@ -70,10 +70,10 @@ const AdminRequests = () => {
                   <td className="px-4 py-2">
                     <span
                       className={`px-2 py-1 rounded ${request?.status === "approved"
-                          ? "bg-green-100 text-green-600"
-                          : request.status === "pending"
-                            ? "bg-yellow-100 text-yellow-600"
-                            : "bg-red-100 text-red-600"
+                        ? "bg-green-100 text-green-600"
+                        : request.status === "pending"
+                          ? "bg-yellow-100 text-yellow-600"
+                          : "bg-red-100 text-red-600"
                         }`}
                     >
                       {request.status}
@@ -99,7 +99,9 @@ const AdminRequests = () => {
             ) : (
               <tr>
                 <td colSpan="8" className="text-center text-gray-500 py-4">
-                  No requests found.
+                  {
+                    loading ? 'Loading...' : 'No requests found.'
+                  }
                 </td>
               </tr>
             )}
