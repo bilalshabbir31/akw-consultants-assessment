@@ -2,7 +2,7 @@
 # KYC Management System
 
 ## Overview
-This project is designed to streamline the Know Your Customer (KYC) process. It includes both client and server components to manage user verification and compliance with regulatory requirements. The system features an admin panel and a user interface where users can add KYC requests and view the status of their requests. Admins can verify requests and update their status to either approved or rejected. The project uses MongoDB with Mongoose ORM and Cloudinary for cloud storage to upload documents. The p...
+This project is designed to streamline the Know Your Customer (KYC) process. It includes both client and server components to manage user verification and compliance with regulatory requirements. The system features an admin panel and a user interface where users can add KYC requests and view the status of their requests. Admins can verify requests and update their status to either approved or rejected. The project uses MongoDB with Mongoose ORM and Cloudinary for cloud storage to upload documents. The project is deployed on Render and can be accessed at [https://kyc-22u2.onrender.com](https://kyc-22u2.onrender.com).
 
 ## Setup Instructions
 
