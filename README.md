@@ -25,7 +25,7 @@ This project is designed to streamline the Know Your Customer (KYC) process. It 
    npm run dev
    ```
 
-5. Access the frontend locally at: [http://localhost:3000](http://localhost:3000)
+5. Access the frontend locally at: [http://localhost:5173](http://localhost:5173)
 
 ### Backend (Server)
 
@@ -46,7 +46,7 @@ This project is designed to streamline the Know Your Customer (KYC) process. It 
    npm run dev
    ```
 
-5. Access the application locally at: [http://localhost:5173](http://localhost:5173)
+5. Access the application locally at: [http://localhost:8080](http://localhost:8080)
 
 ## Usage
 
