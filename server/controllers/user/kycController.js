@@ -4,7 +4,7 @@ import { fileUpload } from "../../utils/fileUploader.js";
 const getAllKYCRequests = async (req, res) => {
   const userId = req?.user?.id
   try {
-    const requests = await Kyc.find({userId}).sort({ createdAt: -1 });
+    const requests = await Kyc.find({userId}).sort({ submittedAt: -1 });
     res.status(200).json({ success: true, data: requests });
   } catch (error) {
     console.log(error);
